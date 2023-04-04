@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="guru.qa.JUniTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-04-04T21:29:36" hostname="MacBook-Air.local" time="25.362">
+  <properties/>
+  <testcase name="Результат поиска по запросу Street Fighter отображет текст {1} на странице" classname="guru.qa.JUniTests" time="18.025"/>
+  <testcase name="Результат поиска по запросу Dune отображет текст {1} на странице" classname="guru.qa.JUniTests" time="2.551"/>
+  <testcase name="Результат поиска по запросу Street Fighter отображет текст {1} на странице" classname="guru.qa.JUniTests" time="1.708"/>
+  <testcase name="Результат поиска по запросу Street Fighter отображет текст Capcom Entertainment на странице" classname="guru.qa.JUniTests" time="1.489"/>
+  <testcase name="Результат поиска по запросу Dune отображет текст Virgin Games на странице" classname="guru.qa.JUniTests" time="1.538"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+Starting ChromeDriver 111.0.5563.64 (c710e93d5b63b7095afe8c2c17df34408078439d-refs/branch-heads/5563@{#995}) on port 20004
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Apr 05, 2023 12:29:43 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 111, so returning the closest version found: 110
+]]></system-err>
+</testsuite>
