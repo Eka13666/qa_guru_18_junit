@@ -5,10 +5,7 @@ import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.*;
 
 import java.util.stream.Stream;
 
@@ -33,29 +30,33 @@ public class JUniTests {
           "Dune, Virgin Games"
   })
 
+  @CsvFileSource(resources = "/testdata/SearchResultsShouldContainExpectedText.csv")
   @ParameterizedTest(name = "Результат поиска по запросу {0} отображет текст {1} на странице")
-  public void SearchTest(String testData, String expectedText) {
+  public void SearchResultsShouldContainExpectedText(String testData, String expectedText) {
     $("#quicksearchgame").setValue(testData).pressEnter();
     $(".main-content").shouldHave(Condition.text(expectedText));
   }
 
   @ValueSource(strings = {"Street Fighter", "Dune"})
-  @ParameterizedTest(name = "Результат поиска по запросу {0} отображет текст {1} на странице")
-  public void SearchTest2(String testData) {
+  @ParameterizedTest(name = "Результат поиска по запросу {0} отображет текст {0} на странице")
+  public void SearchResultsShouldContainExpectedGameName(String testData) {
     $("#quicksearchgame").setValue(testData).pressEnter();
     $(".main-content").shouldHave(Condition.text(testData));
   }
 
-  static Stream<Arguments> SearchTest3(){
+  static Stream<Arguments> SearchResultsShouldContainExpeсtedGameNameAndCompanyName() {
     return Stream.of(
-            Arguments.of("Street Fighter", "Dune")
+            Arguments.of("Street Fighter", "Capcom Entertainment"),
+            Arguments.of("Dune", "Virgin Games")
 
     );
   }
+
   @MethodSource
   @ParameterizedTest(name = "Результат поиска по запросу {0} отображет текст {1} на странице")
-  public void SearchTest3(String testData) {
+  public void SearchResultsShouldContainExpeсtedGameNameAndCompanyName(String testData, String expectedText) {
     $("#quicksearchgame").setValue(testData).pressEnter();
-    $(".main-content").shouldHave(Condition.text(testData));
+    $(".main-content").shouldHave(Condition.text(expectedText));
+
   }
 }
